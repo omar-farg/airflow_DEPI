@@ -9,7 +9,9 @@ this folder contains:
 
     a txt file in tmp folder that stores random numbers
 
-![alt text](image.png)
+
+
+<img width="1859" height="889" alt="Screenshot 2025-10-02 213624" src="https://github.com/user-attachments/assets/0b2c9d7b-070d-4591-91f4-8c72ceb95295" />
 DAG overview
 
 
