@@ -1,0 +1,44 @@
+[2025-10-02T18:29:04.171+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-10-02T18:29:04.186+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Airflow_Depi.random_number scheduled__2025-10-02T18:28:00+00:00 [queued]>
+[2025-10-02T18:29:04.192+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Airflow_Depi.random_number scheduled__2025-10-02T18:28:00+00:00 [queued]>
+[2025-10-02T18:29:04.194+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-10-02T18:29:04.204+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): random_number> on 2025-10-02 18:28:00+00:00
+[2025-10-02T18:29:04.210+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=3055) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-10-02T18:29:04.211+0000] {standard_task_runner.py:63} INFO - Started process 3057 to run task
+[2025-10-02T18:29:04.211+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Airflow_Depi', 'random_number', 'scheduled__2025-10-02T18:28:00+00:00', '--job-id', '844', '--raw', '--subdir', 'DAGS_FOLDER/Airflow_Depi.py', '--cfg-path', '/tmp/tmprpcl964m']
+[2025-10-02T18:29:04.213+0000] {standard_task_runner.py:91} INFO - Job 844: Subtask random_number
+[2025-10-02T18:29:04.224+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2025-10-02T18:29:04.268+0000] {task_command.py:426} INFO - Running <TaskInstance: Airflow_Depi.random_number scheduled__2025-10-02T18:28:00+00:00 [running]> on host 7b79ac012ec6
+[2025-10-02T18:29:04.334+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Airflow_Depi' AIRFLOW_CTX_TASK_ID='random_number' AIRFLOW_CTX_EXECUTION_DATE='2025-10-02T18:28:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-10-02T18:28:00+00:00'
+[2025-10-02T18:29:04.339+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-10-02T18:29:04.341+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-10-02T18:29:04.341+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/Airflow_Depi.py", line 12, in random_num
+    with open(output, "w") as f:
+         ^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/airflow/shared/tmp/random.txt'
+[2025-10-02T18:29:04.354+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Airflow_Depi, task_id=random_number, run_id=scheduled__2025-10-02T18:28:00+00:00, execution_date=20251002T182800, start_date=20251002T182904, end_date=20251002T182904
+[2025-10-02T18:29:04.365+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 844 for task random_number ([Errno 2] No such file or directory: '/opt/airflow/shared/tmp/random.txt'; 3057)
+[2025-10-02T18:29:04.386+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-10-02T18:29:04.403+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-10-02T18:29:04.406+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
