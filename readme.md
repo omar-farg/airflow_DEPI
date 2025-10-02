@@ -15,18 +15,18 @@ this folder contains:
 DAG overview
 
 
-![alt text](image-1.png)
+<img width="1832" height="799" alt="Screenshot 2025-10-02 213645" src="https://github.com/user-attachments/assets/e45278ba-76c7-40ac-a320-a71f66839ef1" />
 DAG graph
 
 
-![alt text](image-2.png)
+<img width="1862" height="750" alt="Screenshot 2025-10-02 213710" src="https://github.com/user-attachments/assets/cc65908f-2166-46fc-aafb-96ee302a5636" />
 first DAG
 
 
-![alt text](image-3.png)
+<img width="1843" height="673" alt="Screenshot 2025-10-02 213733" src="https://github.com/user-attachments/assets/314902a0-21fb-4308-90a9-22ff9b8ec42f" />
 second DAG
 
 
-![alt text](image-4.png)
+<img width="1833" height="753" alt="Screenshot 2025-10-02 213749" src="https://github.com/user-attachments/assets/1bca01fc-575a-45af-94da-8943a0cd29be" />
 third DAG
 
